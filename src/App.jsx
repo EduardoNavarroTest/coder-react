@@ -4,32 +4,37 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header> <h1 id="titulo" className='titulo header__titulo'>Hola mundo desde React</h1>
+        <nav>
+          <a href="#">Reloj</a>
+          <a href="#">Carrito</a>
+          <a href="#">Detalles</a>
+        </nav>
+      </header>
+
+      <main>
+        <h2>Esto es un main</h2>
+      </main>
+
+      <footer>
+        <p>Copyright 2024</p>
+      </footer>
     </>
+
   )
 }
 
 export default App
+
+
+/*
+1- Dan salida en pantalla
+2- Siempre son funciones
+3- Siempre tienen un retorno
+4- Se nombran con PascalCase
+5- Se crean los componentes por a parte y se exportan para que otro archivo los use
+
+
+*/
