@@ -1,0 +1,27 @@
+#icon-cart-shop {
+    cursor: pointer;
+    width: 25px;
+    height: auto;
+    margin-right: 8px;
+    filter: invert(1);
+}
+
+#icon-cart-shop:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease;
+}
+
+.cart-widget {
+    position: relative;
+    display: inline-block;
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.75rem;
+    min-width: 20px;
+    padding: 3px 6px;
+    border-radius: 10px;
+}

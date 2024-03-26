@@ -1,7 +1,9 @@
+import ItemListContainer from "./ItemListContainer"
+
 function Main(){
     return (
         <main>
-            <h2>Esto es un main</h2>
+            <ItemListContainer greeting="¡Bienvenido a nuestra tienda en línea!" />
         </main>
     )
 }

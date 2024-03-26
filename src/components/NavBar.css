@@ -1,0 +1,17 @@
+.logo__principal {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .cart-link img {
+    width: 24px; 
+    height: auto;
+    margin-right: 8px; 
+  }
