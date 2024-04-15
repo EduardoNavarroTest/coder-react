@@ -1,3 +1,44 @@
-.container {
-    text-align: center;
+.item-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.item-card {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.item-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.item-details {
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.item-title {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .item-list-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .item-list-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+.btn-primary {
+    margin-top: auto;
 }

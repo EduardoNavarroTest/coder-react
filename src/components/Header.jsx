@@ -1,6 +1,6 @@
 import NavBar from "./NavBar"
 
-function Header(){
+const Header = () => {
     return(
       <>
       <NavBar />

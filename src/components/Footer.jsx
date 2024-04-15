@@ -1,4 +1,4 @@
-function Footer() {
+const Footer = () => {
     return (
         <footer>
             <p>Copyright 2024 (Futura Implementación)</p>
