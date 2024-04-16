@@ -21,10 +21,10 @@ const NavBar = () => {
               <Link to="/" className="nav-link active" aria-current="page">Home</Link>
             </Nav.Item>
             <Nav.Item>
-              <Link to="/category/clothes" className="nav-link">Clothes</Link>
+              <Link to="/category/electronics" className="nav-link">Electronics</Link>
             </Nav.Item>
             <Nav.Item>
-              <Link to="/category/electronics" className="nav-link">Electronics</Link>
+              <Link to="/category/clothes" className="nav-link">Clothes</Link>
             </Nav.Item>
             <Nav.Item>
               <Link to="/category/shoes" className="nav-link">Shoes</Link>

@@ -18,7 +18,7 @@ const ItemDetailsContainer = () => {
             .catch((e) => {
                 console.log(e)
             });
-    }, [id]);
+    }, []);
 
     return (
         <div>

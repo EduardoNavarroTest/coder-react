@@ -1,8 +1,7 @@
-import Clothes from "../pages/Clothes"
-import Shoes from "../pages/Shoes"
 import ItemListContainer from "./ItemListContainer"
 import ItemDetailContainer from "./ItemDetailContainer"
 import { Routes, Route } from "react-router-dom"
+import NotFound from "../pages/NotFound"
 
 const Main = () => {
     return (
@@ -11,15 +10,15 @@ const Main = () => {
 
             <Routes>
                 <Route path='/' element={<ItemListContainer />} />
-                <Route path='/category/clothes' element={<Clothes />} />
-                <Route path='/category/electronics' element={<ItemListContainer />} />
-                <Route path='/category/shoes' element={<Shoes />} />
-                <Route path='/category/miscellaneous' element={<ItemListContainer />} />
-                <Route path="/category/:id" element={<ItemDetailContainer />} />
+
+                <Route path="/category/:id" element={<ItemListContainer />} />
+
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
+
+                <Route path="/*" element={<NotFound />} />
             </Routes>
         </main>
     )
 }
 
-export default Main
+export default Main;
