@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <div className="container-fluid">
-        <Navbar.Brand href="./index.html">
+        <Navbar.Brand>
           <Link to="/">
           <img className="logo__principal" src="/clock.png" alt="Logo web" />
           </Link>
