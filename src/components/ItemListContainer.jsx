@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './ItemListContainer.css';
-
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
