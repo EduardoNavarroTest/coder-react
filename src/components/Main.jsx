@@ -6,7 +6,6 @@ import NotFound from "../pages/NotFound"
 const Main = () => {
     return (
         <main>
-            {/* <ItemListContainer greeting="¡Bienvenido a nuestra tienda en línea!" test="Hola Mundo" /> */}
 
             <Routes>
                 <Route path='/' element={<ItemListContainer />} />
@@ -17,6 +16,7 @@ const Main = () => {
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
+
         </main>
     )
 }

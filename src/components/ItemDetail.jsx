@@ -16,7 +16,7 @@ const Details = ({ product }) => {
   }
 
   const handleAddToCart = () => {
-    console.log({...product, quantity: count});
+    console.log({ ...product, quantity: count });
   }
 
 
@@ -34,7 +34,7 @@ const Details = ({ product }) => {
             <p className="card-text"><strong>Description:</strong> {product.description}</p>
             <p className="card-text"><strong>Price:</strong> ${product.price}</p>
             <p className="card-text"><strong>Stock:</strong> {product.stock}</p>
-            <ItemCount count={count} handleAdd={handleAdd} handleRemove={handleRemove} handleAddToCart={handleAddToCart}/>
+            <ItemCount count={count} handleAdd={handleAdd} handleRemove={handleRemove} handleAddToCart={handleAddToCart} />
           </div>
         </div>
       </div>
@@ -42,4 +42,4 @@ const Details = ({ product }) => {
   );
 }
 
-export default Details
+export default Details;
