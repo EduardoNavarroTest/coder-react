@@ -18,6 +18,7 @@ const Main = () => {
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
+
         </main>
     )
 }

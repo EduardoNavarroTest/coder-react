@@ -1,25 +1,24 @@
 .item {
-    display: inline-block;
+  display: inline-block;
 }
 
 .item-count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-  }
-  
-  .item-count button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: #f2f2f2;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  .item-count p {
-    margin: 0 10px;
-    font-size: 20px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.item-count button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.item-count p {
+  margin: 0 10px;
+  font-size: 20px;
+}
