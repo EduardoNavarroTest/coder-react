@@ -1,11 +1,12 @@
 import NavBar from "./NavBar"
+import './Header.css';
 
 const Header = () => {
-    return(
-      <>
+  return (
+    <header className="header-style">
       <NavBar />
-      </>
-    )
-  }
-  
-  export default Header
+    </header>
+  )
+}
+
+export default Header

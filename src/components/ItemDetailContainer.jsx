@@ -7,7 +7,6 @@ const ItemDetailsContainer = () => {
     const {id} = useParams();
     const URL_PRODUCT = `https://api.escuelajs.co/api/v1/products/${id}`;
     const [product, setProduct] = useState({});
-    console.log(id)
 
     useEffect(() => {
         fetch(URL_PRODUCT)

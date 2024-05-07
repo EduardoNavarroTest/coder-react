@@ -1,8 +1,8 @@
+import CartWidget from './widgets/CartWidget.jsx';
+import { Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css';
-import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -24,7 +24,7 @@ const NavBar = () => {
               <Link to="/category/electronics" className="nav-link">Electronics</Link>
             </Nav.Item>
             <Nav.Item>
-              <Link to="/category/clothes" className="nav-link">Clothes</Link>
+              <Link to="/clothes" className="nav-link">Clothes</Link>
             </Nav.Item>
             <Nav.Item>
               <Link to="/category/shoes" className="nav-link">Shoes</Link>

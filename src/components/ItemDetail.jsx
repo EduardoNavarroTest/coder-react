@@ -1,11 +1,13 @@
-import ItemCount from "../widgets/ItemCount.jsx";
-import { useState } from "react"
+import { CartContext } from "../context/CartContex.jsx";
+import ItemCount from "./widgets/ItemCount.jsx";
+import { useContext, useState } from "react"
 
-const Details = ({ product }) => {
-
-  product.stock = 5;
+const ItemDetails = ({ product }) => {
 
   const [count, setCount] = useState(1);
+  const { cart, setCart } = useContext(CartContext);
+
+  product.stock = 5;
 
   const handleAdd = () => {
     count < product.stock && setCount(count + 1);
@@ -16,7 +18,24 @@ const Details = ({ product }) => {
   }
 
   const handleAddToCart = () => {
-    console.log({...product, quantity: count});
+
+    const itemAdded = { ...product, quantity: count };
+
+    const newCart = [...cart];
+    const itemInTheCard = newCart.find((item) => item.id === itemAdded.id);
+
+
+    if (itemInTheCard) {
+
+      itemInTheCard.quantity += count;
+    } else {
+      newCart.push(itemAdded)
+    }
+
+    setCart(newCart)
+
+    console.log(itemAdded)
+    
   }
 
 
@@ -30,11 +49,10 @@ const Details = ({ product }) => {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">{product.title}</h5>
-            {/* <p className="card-text"><strong>Category:</strong> {product.category.name}</p> */}
             <p className="card-text"><strong>Description:</strong> {product.description}</p>
             <p className="card-text"><strong>Price:</strong> ${product.price}</p>
             <p className="card-text"><strong>Stock:</strong> {product.stock}</p>
-            <ItemCount count={count} handleAdd={handleAdd} handleRemove={handleRemove} handleAddToCart={handleAddToCart}/>
+            <ItemCount count={count} handleAdd={handleAdd} handleRemove={handleRemove} handleAddToCart={handleAddToCart} />
           </div>
         </div>
       </div>
@@ -42,4 +60,4 @@ const Details = ({ product }) => {
   );
 }
 
-export default Details
+export default ItemDetails;
