@@ -2,7 +2,8 @@ import ItemListContainer from "./ItemListContainer"
 import ItemDetailContainer from "./ItemDetailContainer"
 import { Routes, Route } from "react-router-dom"
 import NotFound from "./NotFound"
-import Clothes from "../pages/Clothes"
+import Cart from "./Cart"
+
 
 const Main = () => {
     return (
@@ -13,10 +14,11 @@ const Main = () => {
                 <Route path="/category/:id" element={<ItemListContainer />} />
 
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
-
-                <Route path="/clothes" element={<Clothes />} />
+                
+                <Route path="/cart" element={<Cart />} />
 
                 <Route path="*" element={<NotFound />} />
+
             </Routes>
 
         </main>

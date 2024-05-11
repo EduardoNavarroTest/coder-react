@@ -3,23 +3,22 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 import { BrowserRouter } from 'react-router-dom';
-import { CartContext } from '../context/CartContex';
-import { useState } from 'react';
+import CartProvider from '../context/context';
 
 function App() {
 
   return (
 
     <BrowserRouter>
+      <CartProvider>
 
-      <CartContext.Provider>
         <div className="main-content">
           <Header />
           <Main />
         </div>
-        <Footer />
 
-      </CartContext.Provider>
+      </CartProvider>
+      <Footer />
     </BrowserRouter>
 
 

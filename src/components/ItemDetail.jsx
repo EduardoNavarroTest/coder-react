@@ -4,8 +4,9 @@ import { useContext, useState } from "react"
 
 const ItemDetails = ({ product }) => {
 
+
+
   const [count, setCount] = useState(1);
-  const { cart, setCart } = useContext(CartContext);
 
   product.stock = 5;
 

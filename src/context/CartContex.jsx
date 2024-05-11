@@ -11,23 +11,7 @@ function cartProvider(props){
         return cart.reduce((acc, prod) => acc + prod.quantiy, 0);
     }
 
-    const addToCart= (count, item) => {
-        
 
-
-    }
-
-    const itemInTheCart = (item) => {
-
-    }
-
-    const cleanCart = () => {
-
-    }
-
-    const deleteItemToCart = () => {
-
-    }
 
 
 

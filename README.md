@@ -1,8 +1,6 @@
-# React + Vite
+# Pendients
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Carrito con contextos
+-  lógica para recuperar del firebase
+- Agregar página del carrito que muestre el resumen de lo que está en el cart + el formulario con los datos
+- Realizar el readme, con la documentación, el gif y las tecnologías utilizadas
