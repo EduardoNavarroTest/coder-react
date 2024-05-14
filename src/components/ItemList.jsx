@@ -1,14 +1,7 @@
 import { Link } from "react-router-dom";
 import './ItemList.css';
-import { useContext } from "react";
-import { context } from "../context/context.jsx"
 
 const ItemList = ({ products }) => {
-
-    const newContext = useContext(context);
-
-    console.log(newContext)
-
 
     return (
         <div className="item-list-container">

@@ -1,29 +1,49 @@
 import { createContext, useState } from "react";
 
-export const context = createContext();
-const Provider = context.Provider;
+export const myContextCart = createContext();
+const Provider = myContextCart.Provider;
 
 
 const CartProvider = (props) => {
 
     const [cart, setCart] = useState([]);
 
-    const valueContext = {
-        cart: cart,
+    const addToCart = (item, quantity) => {
+        const itemAdded = { ...item, quantity };
+        const copyCart = [...cart];
+        const itemIsInCart = copyCart.find((item) => item.id === itemAdded.id);
+        itemIsInCart ? itemIsInCart.quantity += quantity : copyCart.push(itemAdded);
+        setCart(copyCart);
+        console.log(cart)
+        console.log(copyCart);
     }
 
-    const addToCart = (count, item) => {
-
-    }
-
-    const itemIsInCart = (item) => {
-
+    const itemIsInCart = (id) => {
+        return cart.length > 0 && cart.some(item => item.id === id);
     }
 
     const cleanCart = () => { setCart([]); }
 
     const deleteItemCart = () => {
 
+    }
+
+    const cantCart = () => {
+        return cart.reduce((acc, prod) => acc + prod.quantity, 0);
+    }
+
+    const totalPrice = () => {
+        return cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0);
+    }
+
+
+    const valueContext = {
+        cart: cart,
+        addToCart: addToCart,
+        cleanCart: cleanCart,
+        deleteItemCart: deleteItemCart,
+        cantCart: cantCart,
+        totalPrice: totalPrice,
     }
 
     return (

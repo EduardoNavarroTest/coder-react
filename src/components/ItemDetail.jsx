@@ -1,11 +1,10 @@
-import { CartContext } from "../context/CartContex.jsx";
+import { myContextCart } from "../context/context.jsx";
 import ItemCount from "./widgets/ItemCount.jsx";
 import { useContext, useState } from "react"
 
 const ItemDetails = ({ product }) => {
 
-
-
+  const { addToCart } = useContext(myContextCart);
   const [count, setCount] = useState(1);
 
   product.stock = 5;
@@ -17,28 +16,6 @@ const ItemDetails = ({ product }) => {
   const handleRemove = () => {
     count > 1 && setCount(count - 1);
   }
-
-  const handleAddToCart = () => {
-
-    const itemAdded = { ...product, quantity: count };
-
-    const newCart = [...cart];
-    const itemInTheCard = newCart.find((item) => item.id === itemAdded.id);
-
-
-    if (itemInTheCard) {
-
-      itemInTheCard.quantity += count;
-    } else {
-      newCart.push(itemAdded)
-    }
-
-    setCart(newCart)
-
-    console.log(itemAdded)
-    
-  }
-
 
   return (
 
@@ -53,7 +30,7 @@ const ItemDetails = ({ product }) => {
             <p className="card-text"><strong>Description:</strong> {product.description}</p>
             <p className="card-text"><strong>Price:</strong> ${product.price}</p>
             <p className="card-text"><strong>Stock:</strong> {product.stock}</p>
-            <ItemCount count={count} handleAdd={handleAdd} handleRemove={handleRemove} handleAddToCart={handleAddToCart} />
+            <ItemCount count={count} handleAdd={handleAdd} handleRemove={handleRemove} handleAddToCart={() => { addToCart(product, count) }} />
           </div>
         </div>
       </div>

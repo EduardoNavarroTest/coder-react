@@ -1,6 +1,6 @@
 import './ItemCount.css'
 
-const ItemCount = ( {count, handleAdd, handleRemove, handleAddToCart} ) => {
+const ItemCount = ({ count, handleAdd, handleRemove, handleAddToCart }) => {
 
     return (
         <div className="item">
