@@ -1,28 +1,32 @@
-import { useForm } from 'react-hook-form';
-import { useContext, useState } from "react"
+import React from 'react';
+import { useContext } from 'react';
 import { myContextCart } from '../context/context';
-import './Checkout.css'
+import './Checkout.css';
 
 const Checkout = () => {
-
-  const { cart, cleanCart, deleteItemCart, totalPrice, cantCart } = useContext (myContextCart);
-
-  
+  const { cart, cleanCart, deleteItemCart, totalPrice } = useContext(myContextCart);
 
   return (
     <div className="carrito-container">
-      {/* Izquierda: Lista de productos y opciones */}
       <div className="carrito-izquierda">
         <h2>Carrito de Compras</h2>
         <ul className="productos-lista">
-          <li>Producto 1</li>
-          <li>Producto 2</li>
-          {/* ... Agrega más productos aquí */}
+          {cart.map((product) => (
+            <li key={product.id}>
+              <span>{product.title}</span> 
+              <span> - {product.quantity}</span> 
+              <span> - ${product.price * product.quantity}</span>
+              <button className="eliminar-producto" onClick={deleteItemCart}>
+            Delete
+          </button> 
+            </li>
+          ))}
         </ul>
-        <p>Total a pagar: ${totalPrice}</p>
+        <p>Total a pagar: ${totalPrice()}</p>
         <div className="opciones-carrito">
-          <button className="eliminar-producto" onClick={deleteItemCart}>Eliminar Producto</button>
-          <button className="vaciar-carrito" onClick={cleanCart}>Vaciar Carrito</button>
+                    <button className="vaciar-carrito" onClick={cleanCart}>
+            Vaciar Carrito
+          </button>
         </div>
       </div>
 
@@ -43,7 +47,8 @@ const Checkout = () => {
   );
 };
 
-export default Checkout
+export default Checkout;
+
 
 // const Clothes = () => {
 
