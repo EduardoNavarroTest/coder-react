@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
+import { collection, getDocs, getFirestore, query, where, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from '../firebase/conexion';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
-  let urlApiRequest;
+  let queryRequest;
   let categoryId;
   const { id } = useParams();
 
@@ -13,21 +16,18 @@ const ItemListContainer = () => {
 
     id && (categoryId = getCategoryId(id)) //Si existe parámetro de categoria en la url => recuperamos el codigo númerico dependiendo de su nombre
 
-    if (categoryId) {
-      urlApiRequest = `https://api.escuelajs.co/api/v1/products/?categoryId=${categoryId}`
-    } else {
-      urlApiRequest = `https://api.escuelajs.co/api/v1/products`
-    }
+    const productsCollection = collection(db, "products-list")
 
+    queryRequest = categoryId ? getDocs(query(productsCollection, where("category.id", "==", categoryId))) : getDocs(productsCollection);
 
-    fetch(urlApiRequest)
-      .then((resp) => resp.json())
-      .then((data) => {
-        setProducts(data);
+    queryRequest
+      .then((resp) => {
+        setProducts(resp.docs.map((doc) => {
+          return { ...doc.data() }
+        }));
       })
-      .catch((e) => {
-        console.log(e)
-      });
+      .catch((e) => console.log(e));
+
   }, [id]);
 
 

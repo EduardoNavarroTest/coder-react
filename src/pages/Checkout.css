@@ -1,0 +1,43 @@
+/* src/components/Carrito.css */
+.carrito-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .carrito-izquierda {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .productos-lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .opciones-carrito {
+    margin-top: 20px;
+  }
+  
+  .eliminar-producto,
+  .vaciar-carrito {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .carrito-derecha {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .datos-pago-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Agrega más estilos según tus necesidades */
+  

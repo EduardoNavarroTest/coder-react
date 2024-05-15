@@ -14,8 +14,6 @@ const CartProvider = (props) => {
         const itemIsInCart = copyCart.find((item) => item.id === itemAdded.id);
         itemIsInCart ? itemIsInCart.quantity += quantity : copyCart.push(itemAdded);
         setCart(copyCart);
-        console.log(cart)
-        console.log(copyCart);
     }
 
     const itemIsInCart = (id) => {

@@ -2,7 +2,7 @@ import ItemListContainer from "./ItemListContainer"
 import ItemDetailContainer from "./ItemDetailContainer"
 import { Routes, Route } from "react-router-dom"
 import NotFound from "./NotFound"
-import Cart from "./Cart"
+import Checkout from "../pages/Checkout"
 
 
 const Main = () => {
@@ -15,7 +15,7 @@ const Main = () => {
 
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
                 
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/cart" element={<Checkout />} />
 
                 <Route path="*" element={<NotFound />} />
 
