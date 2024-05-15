@@ -3,8 +3,8 @@ const Footer = () => {
     <footer className="bg-dark text-light">
       <div className="container-fluid py-3 text-center">
         <div className="row">
-            <p className="my-2">Todos los derechos reservados - LaBaratija.com © 2024</p>
-            <p>Encuentra las mejores ofertas en electrónica, ropa, zapatos y más.</p>
+            <p className="my-2">All rights reserved - LaBaratija.com © 2024</p>
+            <p>Find the best deals on electronics, clothing, shoes and more</p>
           </div>
         </div>
     </footer>

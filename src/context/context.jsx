@@ -23,7 +23,7 @@ const CartProvider = (props) => {
     const cleanCart = () => { setCart([]); }
 
     const deleteItemCart = () => {
-
+        console.log("Product delete")
     }
 
     const cantCart = () => {

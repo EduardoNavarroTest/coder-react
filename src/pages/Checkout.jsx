@@ -1,7 +1,14 @@
 import { useForm } from 'react-hook-form';
+import { useContext, useState } from "react"
+import { myContextCart } from '../context/context';
 import './Checkout.css'
 
 const Checkout = () => {
+
+  const { cart, cleanCart, deleteItemCart, totalPrice, cantCart } = useContext (myContextCart);
+
+  
+
   return (
     <div className="carrito-container">
       {/* Izquierda: Lista de productos y opciones */}
@@ -12,9 +19,10 @@ const Checkout = () => {
           <li>Producto 2</li>
           {/* ... Agrega más productos aquí */}
         </ul>
+        <p>Total a pagar: ${totalPrice}</p>
         <div className="opciones-carrito">
-          <button className="eliminar-producto" onClick={() => console.log('Eliminar producto')}>Eliminar Producto</button>
-          <button className="vaciar-carrito" onClick={() => console.log('Vaciar carrito')}>Vaciar Carrito</button>
+          <button className="eliminar-producto" onClick={deleteItemCart}>Eliminar Producto</button>
+          <button className="vaciar-carrito" onClick={cleanCart}>Vaciar Carrito</button>
         </div>
       </div>
 
