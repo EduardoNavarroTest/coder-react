@@ -1,10 +1,17 @@
-import React from 'react';
-import { useContext } from 'react';
-import { myContextCart } from '../context/context';
-import './Checkout.css';
+import React, { useContext } from "react";
+import { myContextCart } from "../context/context";
+import { useForm } from "react-hook-form";
+import "./Checkout.css";
 
 const Checkout = () => {
-  const { cart, cleanCart, deleteItemCart, totalPrice } = useContext(myContextCart);
+  const { cart, cleanCart, deleteItemCart, totalPrice } =
+    useContext(myContextCart);
+
+  const { register, handleSubmit } = useForm();
+
+  const send = (data) => {
+    console.log(data);
+  };
 
   return (
     <div className="carrito-container">
@@ -13,34 +20,35 @@ const Checkout = () => {
         <ul className="productos-lista">
           {cart.map((product) => (
             <li key={product.id}>
-              <span>{product.title}</span> 
-              <span> - {product.quantity}</span> 
-              <span> - ${product.price * product.quantity}</span>
-              <button className="eliminar-producto" onClick={deleteItemCart}>
-            Delete
-          </button> 
+              <span><strong>{product.title}</strong></span>
+              <span>Cant: {product.quantity}</span>
+              <span>${product.price * product.quantity}</span>
+              <button className="eliminar-producto" onClick={() => deleteItemCart(product.id)}>Delete</button>
             </li>
           ))}
         </ul>
-        <p>Total a pagar: ${totalPrice()}</p>
+        <p>Total price: ${totalPrice()}</p>
         <div className="opciones-carrito">
-                    <button className="vaciar-carrito" onClick={cleanCart}>
-            Vaciar Carrito
-          </button>
+          <button className="vaciar-carrito" onClick={cleanCart}>Clean cart</button>
         </div>
       </div>
 
-      {/* Derecha: Datos de pago */}
       <div className="carrito-derecha">
         <h2>Datos de Pago</h2>
-        <form className="datos-pago-form">
-          <label htmlFor="nombre">Nombre:</label>
-          <input type="text" id="nombre" />
+        <form className="datos-pago-form" onSubmit={handleSubmit(send)}>
+          <label>Name:</label>
+          <input type="text" {...register("name")} />
 
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" />
+          <label>Email:</label>
+          <input type="email" {...register("email")} />
 
-          {/* Agrega más campos de datos de pago aquí */}
+          <label>Phone:</label>
+          <input type="tel" {...register("phone")} />
+
+          <label>Addres:</label>
+          <input type="text" {...register("addres")} />
+
+          <button className="confirm-cart" type="submit">Confirm</button>
         </form>
       </div>
     </div>
@@ -48,7 +56,6 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
 
 // const Clothes = () => {
 
@@ -62,7 +69,6 @@ export default Checkout;
 //   /*const handleSubmit = (e) => {
 //     e.preventDefault();
 
-
 //     console.log('Formulario enviado:',  formData );
 //   };
 
@@ -70,15 +76,15 @@ export default Checkout;
 //     const { name, value } = e.target;
 //     setFormData({ ...formData, [name]: value });
 //   };
-  
+
 //     const handleName = (e) => {
 //       setName(e.target.value)
 //     }
-  
+
 //     const handleEmail = (e) => {
 //       setEmail(e.target.value)
 //     }
-  
+
 //     const handlePhone = (e) => {
 //       setPhone(e.target.value)
 //     }

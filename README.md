@@ -6,7 +6,7 @@ LaBaratija.com es una aplicación web que simula la interacción del usuario con
 
 - **Bootstrap**: Utilizado para dar estilo a las páginas web.
 - **Firebase**: Almacena la base de datos de productos y otras colecciones relacionadas con el carrito de compras.
-- **Prime React**: Proporciona ventanas emergentes con estilo.
+- **React Hook Toast**: Proporciona ventanas emergentes con estilo.
 - **React Router Dom**: Maneja las rutas y enlaces dentro de la aplicación.
 - **React Hook Form**: Facilita el manejo de formularios.
 
