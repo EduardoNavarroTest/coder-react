@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { myContextCart } from "../context/context";
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
+import ToastConfig from "../utils/ToastConfig.jsx";
 import "./Checkout.css";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../firebase/conexion';
@@ -40,7 +42,9 @@ const Checkout = () => {
   }
 
   return (
+
     <div className="carrito-container">
+
       <div className="carrito-izquierda">
         <h2>Shopping Cart</h2>
         <ul className="productos-lista">
@@ -64,24 +68,24 @@ const Checkout = () => {
         <h2>Payment details</h2>
         <form className="datos-pago-form" onSubmit={handleSubmit(send)}>
           <label>Name:</label>
-          <input type="text" {...register("name")} />
+          <input type="text" {...register("name", { required: "required" })} />
 
           <label>Email:</label>
-          <input type="email" {...register("email")} />
+          <input type="email" {...register("email", { required: "required" })} />
 
           <label>Phone:</label>
-          <input type="tel" {...register("phone")} />
+          <input type="tel" {...register("phone", { required: "required" })} />
 
           <label>Address:</label>
           <input type="text" {...register("address")} />
 
           <button className="confirm-cart" type="submit" disabled={cart.length === 0}>Confirm</button>
         </form>
+
       </div>
 
-
-
     </div>
+
   );
 };
 
