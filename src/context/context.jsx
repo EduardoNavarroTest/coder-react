@@ -22,8 +22,9 @@ const CartProvider = (props) => {
 
     const cleanCart = () => { setCart([]); }
 
-    const deleteItemCart = () => {
-        console.log("Product delete")
+    const deleteItemCart = (id) => {
+        const newCart = cart.filter(item => item.id != id);
+        setCart(newCart);
     }
 
     const cantCart = () => {

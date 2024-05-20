@@ -22,6 +22,6 @@ Para utilizar la aplicación, sigue estos pasos:
 6. Dentro de los detalles del producto, los usuarios pueden elegir la cantidad deseada para agregar al carrito.
 7. La aplicación incluye un widget que muestra el número total de artículos en el carrito. Al hacer clic en este widget, los usuarios pueden ver todos los productos en el carrito y proceder al pago.
 
-!Uso de la aplicación (GIF) https://mygif.com.co
+!Uso de la aplicación (Descargar GIF) https://drive.google.com/file/d/1I7r_cN1v35lkLzQ4vvLLXpVu2zLzcXhB/view?usp=sharing
 
 ¡Gracias por visitar LaBaratija.com! 🛒🌟
